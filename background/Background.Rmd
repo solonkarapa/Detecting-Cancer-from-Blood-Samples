@@ -1,6 +1,18 @@
 ---
-title: "Background"
-output: github_document
+title: "Detecting Cancer from Blood Samples"
+author: Solon Karapanagiotis
+date: Sep 2025 
+output:
+  html_notebook:
+    theme: united
+    toc: yes
+    number_sections: yes
+  html_document:
+    df_print: paged
+    toc: yes
+    code_download: no
+editor_options:
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -53,6 +65,7 @@ include_graphics(paste0(figures_path, "christiano_cut.png"))
 ```{r, echo=F}
 include_graphics(paste0(figures_path, "amplitude_oscillation.png"))
 ```
+
 ```{r, echo=F}
 include_graphics(paste0(figures_path, "periodicity.png"))
 ```
@@ -61,7 +74,7 @@ include_graphics(paste0(figures_path, "periodicity.png"))
  
 These observations have motivated studies exploring how cfDNA fragment length properties can be used to classify cfDNA samples from patients with cancer and healthy individuals. 
 
-## Glossary of Terms
+# Glossary of Terms
 - Solid tumors: 
 abnormal masses of tissue that arise from uncontrolled cell growth in a specific organ or tissue, forming a solid lump, as opposed to cancers of the blood (like leukemia) which are non-solid
 

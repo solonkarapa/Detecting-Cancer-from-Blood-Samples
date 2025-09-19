@@ -100,6 +100,7 @@ ggplot(data_example) +
     labs(x = "Fragment Length (bp)", y = "Density") +
     theme_classic()
 ```
+
 ```{r, echo=F}
 figures_path <- "/Users/solon/Cloud-Drive/Projects/UK_Gratuate_Modeling/presentation/figures/"
 include_graphics(paste0(figures_path, "frag_density.png"))
