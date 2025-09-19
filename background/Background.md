@@ -1,5 +1,7 @@
-Background
+Detecting Cancer from Blood Samples
 ================
+Solon Karapanagiotis
+Sep 2025
 
 # Liquid biopsies and cell-free DNA
 
@@ -104,6 +106,7 @@ lung cancer (bottom).
     patients.
 
 <img src="../../presentation/figures/amplitude_oscillation.png" width="808" />
+
 <img src="../../presentation/figures/periodicity.png" width="672" />
 
 4.  Shorter periodicities in cfDNA fragmentation in cancer patients have
@@ -113,7 +116,7 @@ These observations have motivated studies exploring how cfDNA fragment
 length properties can be used to classify cfDNA samples from patients
 with cancer and healthy individuals.
 
-## Glossary of Terms
+# Glossary of Terms
 
 - Solid tumors: abnormal masses of tissue that arise from uncontrolled
   cell growth in a specific organ or tissue, forming a solid lump, as
@@ -156,7 +159,3 @@ with cancer and healthy individuals.
 
 - Fragment size distribution: The variation in lengths of cfDNA
   fragments, which can differ between tumor-derived and non-tumor cfDNA.
-
-Density ^ \| \*\* \| \* * \| * * \| * * \| * * \| * \* * \| * \* \* *
-\|****\_\_\_\_\_\_\_\_\_\_\_\_\_\_*****\_\_\_\*\_\_\_\_\_\_\> Fragment
-size (bp) 160 320 480

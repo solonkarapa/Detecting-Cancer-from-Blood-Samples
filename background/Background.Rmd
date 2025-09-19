@@ -2,17 +2,7 @@
 title: "Detecting Cancer from Blood Samples"
 author: Solon Karapanagiotis
 date: Sep 2025 
-output:
-  html_notebook:
-    theme: united
-    toc: yes
-    number_sections: yes
-  html_document:
-    df_print: paged
-    toc: yes
-    code_download: no
-editor_options:
-  chunk_output_type: inline
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
