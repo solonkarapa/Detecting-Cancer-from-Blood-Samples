@@ -1,0 +1,108 @@
+---
+title: "Detecting Cancer from Blood Samples \n - UK Graduate Modelling Camp 2025"
+subtitle: "UK Graduate Modelling Camp 2025"
+author: "Solon Karapanagiotis, University of Cambridge --"
+date: "September 22-26, 2025"
+output: github_document
+---
+
+```{r, include=FALSE}
+library(knitr)
+```
+
+# Introduction 
+Early detection of cancer significantly improves patient survival rates. However, many types of **solid tumours** — such as those in the lung, pancreas, or colon — are often found only after they have grown large or spread, when treatment becomes more difficult. This is partly due to the absence of effective screening methods. 
+
+A promising new approach is **liquid biopsy**. Instead of taking a tissue sample from a tumour, this method looks for tiny traces of cancer in a regular blood sample. One of the key markers to look for in a liquid biopsy is circulating cell-free DNA (**cfDNA**). This is DNA that is released into the bloodstream when cells die and break apart. Tumour cells, like all cells, release DNA when they die — but their DNA often carries changes (like **mutations**) that are specific to cancer. 
+
+By detecting these cancer-specific changes in cfDNA, we may be able to spot the presence of cancer even before a tumour is large enough to be seen on a screening scan. However, in the early stages of cancer, the amount of tumour-derived cfDNA in the blood is very small, and the signal it gives is often buried in a lot of background noise from healthy cells. This makes reliable detection a challenge. 
+
+In this project, we will be looking at the specific aspect of cfDNA - it's **fragmentation** patterns. When cells break down, their DNA doesn’t come out in one long strand. Instead, it gets chopped up into fragments—like tearing a book into small strips of paper. These fragments are not random. They tend to be cut at certain sizes, often related to how DNA is wrapped around proteins (like beads on a string).
+
+By studying how the DNA is fragmented—the lengths, where the cuts happen, and which parts of the genome appear—we can learn things about where the DNA came from (e.g., healthy cells vs. tumor cells).
+
+# Aim  
+To develop and evaluate mathematical and statistical models capable of detecting early-stage cancers from cfDNA data by integrating and analysing weak signal features across various cancer types. 
+
+# Data 
+We will be using data from the 103 cancer and 88 non-cancer individuals. The data can be found [here](https://drive.google.com/drive/folders/17nnJX-qfDAGJuJuMQWL896kCPspfy0cL?usp=sharing).
+
+## Data Description
+The metadata.csv file contains four columns:
+
+| Column | Description |
+|--------|-------------|
+| **id**  | The unique individual identifier |
+| **status**  | Clinical status: `cancer` and `non-cancer` |
+| **disease status**  | Type of cancer (or non-cancer) |
+| **study**  | The publication | 
+
+The fragment data is stored in tab-separated value (TSV) files inside the `train` folder. Each fragment data file corresponds to one individual and contains five columns:
+
+| Column | Description |
+|--------|-------------|
+| **1**  | Chromosome name |
+| **2**  | Start coordinate of the fragment |
+| **3**  | End coordinate of the fragment |
+| **4**  | MAPQ score of the alignment (if the two paired reads have different MAPQ scores, the smaller one is used) |
+| **5**  | Strand to which the first read is mapped |
+
+## Curation Steps
+To calculate the fragment length, we first rule out fragments with MAPQ scores less than 30, which either
+indicate low mapping qualities, or reads not uniquely mapped to the reference genome (when MAPQ equals
+0).
+
+The fragment length is defined as the interval between fragment ends, with both endpoints included, that is, the difference between Column 2 and Column 3 + 1 in the fragment data file. That is, `End coordinate of the fragment` - `Start coordinate of the fragment` + 1.
+
+# Example: Data Loading and Processing
+
+This example is implemented in `R`. 
+
+```{r, eval=F}
+library(googledrive)
+library(data.table)
+library(httr)
+library(dplyr)
+
+# List all files in the train folder
+folder_files <- drive_ls(as_id("1Hl34zL7sBAtNTCIwH48aXZFDiz9mz3B3"))
+
+# select one file - here EE85732
+selected_file <- folder_files[folder_files$name == "EE88311.hg38.frag.gz", ]
+
+# Use the file's ID, not its name
+file_id <- selected_file$id
+
+# Temporary file location where the file will be downloaded
+download_path <- "~/Downloads/temp/EE88311.hg38.frag.gz"
+
+# Download the file (overwrite if exists)
+drive_download(as_id(file_id), path = download_path, overwrite = TRUE)
+
+# Read gzipped file using fread() from data.table package
+data <- fread(download_path)
+
+# Create the fragment length variable
+data_example <- data %>% 
+    mutate(length = V3 - V2 + 1) %>% # create fragment length
+    filter(V4 > 30) # select fragments with MAPQ scores higher than 30
+
+# Change naming of columns
+colnames(data_example) <- c("chr", "start", "end", "mapq", "strand", "length")
+
+str(data_example)
+```
+```{r, eval=F}
+library(ggplot2)
+
+ggplot(data_example) +
+    geom_density(aes(x = length)) +
+    labs(x = "Fragment Length (bp)", y = "Density") +
+    theme_classic()
+```
+```{r, echo=F}
+figures_path <- "/Users/solon/Cloud-Drive/Projects/UK_Gratuate_Modeling/presentation/figures/"
+include_graphics(paste0(figures_path, "frag_density.png"))
+```
+
+
