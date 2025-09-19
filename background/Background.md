@@ -1,6 +1,6 @@
 Detecting Cancer from Blood Samples
 ================
-Solon Karapanagiotis
+Solon Karapanagiotis –
 Sep 2025
 
 # Liquid biopsies and cell-free DNA
@@ -37,7 +37,7 @@ underlying biological processes.
 
 <div class="figure">
 
-<img src="../../presentation/figures/gr2_lrg.jpg" alt="Fragment length distribution of cfDNA in healthy individuals. Most fragments are around 166 base pairs (bp). A bp is a unit of measurement for DNA length, representing two nucleotides bonded together across the double helix." width="3404" />
+<img src="../figures/cfDNA_density.jpg" alt="Fragment length distribution of cfDNA in healthy individuals. Most fragments are around 166 base pairs (bp). A bp is a unit of measurement for DNA length, representing two nucleotides bonded together across the double helix." width="3404" />
 <p class="caption">
 
 Fragment length distribution of cfDNA in healthy individuals. Most
@@ -61,7 +61,7 @@ with and without cancer:
 
 <div class="figure">
 
-<img src="../../presentation/figures/gr3_lrg.jpg" alt="The figure above presents an illustrated comparison of the fragment size distributions of a cancer patient (black line) and that of the mean of 17 healthy individuals (blue line). Vertical lines indicate fragment lengths where the mean size profile curve of cfDNA from healthy individuals crosses that of the cancer patient cfDNA. Inset: zoom on the 240–480 bp size range. Compared with the healthy mean, the cancer patient size profile has an increased number of fragments in the 40–151 and 218–320 bp ranges." width="2216" />
+<img src="../figures/cfDNA_ctDNA_densities.jpg" alt="The figure above presents an illustrated comparison of the fragment size distributions of a cancer patient (black line) and that of the mean of 17 healthy individuals (blue line). Vertical lines indicate fragment lengths where the mean size profile curve of cfDNA from healthy individuals crosses that of the cancer patient cfDNA. Inset: zoom on the 240–480 bp size range. Compared with the healthy mean, the cancer patient size profile has an increased number of fragments in the 40–151 and 218–320 bp ranges." width="2216" />
 <p class="caption">
 
 The figure above presents an illustrated comparison of the fragment size
@@ -78,7 +78,7 @@ and 218–320 bp ranges.
 
 <div class="figure">
 
-<img src="../../presentation/figures/boxplots.png" alt="Proportion of cfDNA fragments below 150 bp by cancer type." width="1518" />
+<img src="../figures/boxplots.png" alt="Proportion of cfDNA fragments below 150 bp by cancer type." width="1518" />
 <p class="caption">
 
 Proportion of cfDNA fragments below 150 bp by cancer type.
@@ -91,7 +91,7 @@ Proportion of cfDNA fragments below 150 bp by cancer type.
 
 <div class="figure">
 
-<img src="../../presentation/figures/christiano_cut.png" alt="Genome-wide cfDNA fragmentation profiles (defined as the ratio of short to long fragments) for 30 healthy individuals (top) and 8 patients with lung cancer (bottom)." width="2878" />
+<img src="../figures/frag_genomewide.png" alt="Genome-wide cfDNA fragmentation profiles (defined as the ratio of short to long fragments) for 30 healthy individuals (top) and 8 patients with lung cancer (bottom)." width="2878" />
 <p class="caption">
 
 Genome-wide cfDNA fragmentation profiles (defined as the ratio of short
@@ -105,9 +105,9 @@ lung cancer (bottom).
     10-bp oscillation amplitude in the 90–145 bp range in cancer
     patients.
 
-<img src="../../presentation/figures/amplitude_oscillation.png" width="808" />
+<img src="../figures/amplitude_oscillation.png" width="808" />
 
-<img src="../../presentation/figures/periodicity.png" width="672" />
+<img src="../figures/periodicity.png" width="672" />
 
 4.  Shorter periodicities in cfDNA fragmentation in cancer patients have
     also been reported.

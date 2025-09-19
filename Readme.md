@@ -132,4 +132,4 @@ ggplot(data_example) +
     theme_classic()
 ```
 
-<img src="../presentation/figures/frag_density.png" width="1051" />
+<img src="figures/fragmentation_density.png" width="1051" />

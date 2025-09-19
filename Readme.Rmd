@@ -102,8 +102,8 @@ ggplot(data_example) +
 ```
 
 ```{r, echo=F}
-figures_path <- "/Users/solon/Cloud-Drive/Projects/UK_Gratuate_Modeling/presentation/figures/"
-include_graphics(paste0(figures_path, "frag_density.png"))
+figures_path <- "/Users/solon/Cloud-Drive/Projects/UK_Gratuate_Modeling/Detecting-Cancer-from-Blood-Samples/figures/"
+include_graphics(paste0(figures_path, "fragmentation_density.png"))
 ```
 
 
