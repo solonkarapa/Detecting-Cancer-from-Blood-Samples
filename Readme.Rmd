@@ -22,7 +22,7 @@ In this project, we will be looking at the specific aspect of cfDNA - it's **fra
 By studying how the DNA is fragmented—the lengths, where the cuts happen, and which parts of the genome appear—we can learn things about where the DNA came from (e.g., healthy cells vs. tumor cells).
 
 # Aim  
-To develop and evaluate mathematical and statistical models capable of detecting early-stage cancers from cfDNA data by integrating and analysing weak signal features across various cancer types. 
+To develop and evaluate mathematical/statistical models capable of detecting early-stage cancers from cfDNA data by integrating and analysing weak signal features across various cancer types. 
 
 # Data 
 We will be using data from the 103 cancer and 88 non-cancer individuals. The data can be found [here](https://drive.google.com/drive/folders/17nnJX-qfDAGJuJuMQWL896kCPspfy0cL?usp=sharing).

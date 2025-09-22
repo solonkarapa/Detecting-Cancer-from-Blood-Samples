@@ -39,7 +39,7 @@ where the DNA came from (e.g., healthy cells vs. tumor cells).
 
 # Aim
 
-To develop and evaluate mathematical and statistical models capable of
+To develop and evaluate mathematical/statistical models capable of
 detecting early-stage cancers from cfDNA data by integrating and
 analysing weak signal features across various cancer types.
 
